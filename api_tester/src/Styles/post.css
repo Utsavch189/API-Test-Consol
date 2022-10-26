@@ -1,0 +1,101 @@
+.main-get {
+    margin-top: 90px;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input {
+    width: 70%;
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.input-field {
+    width: 79%;
+    height: 38px;
+    margin-right: 6;
+}
+
+.body {
+    width: 100%;
+    height: 690px;
+    margin-top: 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.header-enter {
+    width: 40%;
+    display: flex;
+    justify-items: flex-start;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+.output-post {
+    width: 100%;
+    background-color: white;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-end;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.output-head-post {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.output-data-post {
+    width: 100%;
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    background-color: black;
+    margin-top: 15px;
+    border: none;
+    padding: 15px;
+}
+
+@media screen and (max-width:576px) {
+    .main-get {
+        height: 100%;
+    }
+    .input {
+        width: 100%;
+    }
+    .body {
+        height: 100%;
+    }
+    .header-enter {
+        width: 88%;
+        height: 20%;
+        position: absolute;
+        top: 0;
+        margin-top: 230px;
+    }
+    .output-post {
+        height: 40%;
+        position: absolute;
+        bottom: 0;
+    }
+    .nav {
+        height: 6vh;
+    }
+}
+
+.dropdown {
+    margin-right: 25px;
+}
