@@ -1,16 +1,16 @@
 import React from 'react'
 
-function Alert({status}) {
+function Alert({status,cont}) {
   return (
     <>
     {
         status===200?
-        <div class="alert alert-success" role="alert">
-            Successfully Posted {status}
+        <div class="alert alert-success mx-4 px-4" role="alert" style={{width:"auto",height:"auto"}}>
+            {cont}
         </div>
         :
-        <div class="alert alert-danger" role="alert">
-            Something went wrong!!! {status}
+        <div class="alert alert-danger mx-4 px-4" role="alert" style={{width:"auto",height:"auto"}}>
+            {cont}
         </div>
     }
     </>

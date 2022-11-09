@@ -11,6 +11,7 @@ function Post() {
   const [api,setApi]=useState('');
   const [body,setBody]=useState(null);
   const [res,setRes]=useState(null);
+  const [status,setStatus]=useState(null);
   const [consoleColor,setConsoleColor]=useState('white');
   const opt=['white','green','red','gray']
 
@@ -18,27 +19,27 @@ function Post() {
     if(api && !header &&body){
       axios.post(api,body)
       .then(res=>{
-        setRes(res.status)
+        setRes(JSON.stringify(res))
+        setStatus(res.data.status)
       })
     }
     else if(api && header &&body){
       console.log(body)
       myaxios(header).post(api,body)
       .then(res=>{
-        setRes(res.status)
-      })
+        setRes(JSON.stringify(res))
+        setStatus(res.data.status)      })
     }
   }
 
   const _onSelect=(e)=>{
     setConsoleColor(e.value)
   }
-  console.log(body)
 
   return (
     <>
       <div className="container main-get">
-        {res&&<Alert status={res}/>}
+        {res&&<Alert status={status} cont={res}/>}
         <div className="input">
           <input type="text" className='input-field' placeholder='Enter API Address' onChange={(e)=>setApi(e.target.value)}/>
           <button className='btn btn-primary' onClick={()=>post()}>POST</button>
@@ -54,7 +55,7 @@ function Post() {
             <Dropdown options={opt} onChange={(e)=>_onSelect(e)} value={consoleColor} placeholder="Select an option" className='dropdown'/>
             </div>
            
-              <textarea className="output-data-post" name="" id="" cols="70" rows="20" onChange={(e)=>setBody((e.target.value))} placeholder='Enter Api Body..Ex -> {"key":"value"}'style={{"color":consoleColor}}></textarea>
+              <textarea className="output-data-post" name="" id="" cols="60" rows="20" onChange={(e)=>setBody((e.target.value))} placeholder='Enter Api Body..Ex -> {"key":"value"}'style={{"color":consoleColor}}></textarea>
             
            
           </div>
